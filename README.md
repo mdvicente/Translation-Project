@@ -1,2 +1,2 @@
 # Translation-Project
-Translation using RNN with tensorflow
+Translation using RNN with Tensorflow
