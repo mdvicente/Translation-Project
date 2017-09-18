@@ -11993,7 +11993,7 @@ les états-unis est parfois occupé en janvier , et il est parfois chaud en nove
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12023,7 +12023,7 @@ les états-unis est parfois occupé en janvier , et il est parfois chaud en nove
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12099,7 +12099,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">model_inputs</span><span class="p">():</span>
@@ -12158,7 +12158,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">process_decoder_input</span><span class="p">(</span><span class="n">target_data</span><span class="p">,</span> <span class="n">target_vocab_to_int</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
@@ -12217,7 +12217,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">imp</span> <span class="k">import</span> <span class="n">reload</span>
@@ -12296,7 +12296,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">decoding_layer_train</span><span class="p">(</span><span class="n">encoder_state</span><span class="p">,</span> <span class="n">dec_cell</span><span class="p">,</span> <span class="n">dec_embed_input</span><span class="p">,</span> 
@@ -12374,7 +12374,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">decoding_layer_infer</span><span class="p">(</span><span class="n">encoder_state</span><span class="p">,</span> <span class="n">dec_cell</span><span class="p">,</span> <span class="n">dec_embeddings</span><span class="p">,</span> <span class="n">start_of_sequence_id</span><span class="p">,</span>
@@ -12456,7 +12456,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">decoding_layer</span><span class="p">(</span><span class="n">dec_input</span><span class="p">,</span> <span class="n">encoder_state</span><span class="p">,</span>
@@ -12499,12 +12499,13 @@ Default GPU Device: /gpu:0
     <span class="n">output_layer</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">target_vocab_size</span><span class="p">,</span> <span class="n">kernel_initializer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">truncated_normal_initializer</span><span class="p">(</span><span class="n">mean</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">stddev</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
         
     <span class="c1"># Set up a training decoder and an inference decoder</span>
-    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s2">&quot;decode&quot;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s2">&quot;decode&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">decoding_scope</span><span class="p">:</span>
         <span class="n">training_decoder_output</span> <span class="o">=</span> <span class="n">decoding_layer_train</span><span class="p">(</span><span class="n">encoder_state</span><span class="p">,</span> <span class="n">dec_cell</span><span class="p">,</span> <span class="n">dec_embed_input</span><span class="p">,</span> <span class="n">target_sequence_length</span><span class="p">,</span> 
                                                        <span class="n">max_target_sequence_length</span><span class="p">,</span> <span class="n">output_layer</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">)</span>
     
     <span class="c1"># Inference Decoder        </span>
-    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s1">&#39;decode&#39;</span><span class="p">,</span> <span class="n">reuse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">variable_scope</span><span class="p">(</span><span class="s1">&#39;decode&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">decoding_scope</span><span class="p">:</span>
+        <span class="n">decoding_scope</span><span class="o">.</span><span class="n">reuse_variables</span><span class="p">()</span>
         <span class="n">start_of_sequence_id</span> <span class="o">=</span> <span class="n">target_vocab_to_int</span><span class="p">[</span><span class="s1">&#39;&lt;GO&gt;&#39;</span><span class="p">]</span>
         <span class="n">end_of_sequence_id</span> <span class="o">=</span> <span class="n">target_vocab_to_int</span><span class="p">[</span><span class="s1">&#39;&lt;EOS&gt;&#39;</span><span class="p">]</span>
         <span class="n">inference_decoder_output</span> <span class="o">=</span> <span class="n">decoding_layer_infer</span><span class="p">(</span><span class="n">encoder_state</span><span class="p">,</span> <span class="n">dec_cell</span><span class="p">,</span> <span class="n">dec_embeddings</span><span class="p">,</span> <span class="n">start_of_sequence_id</span><span class="p">,</span> 
@@ -12557,7 +12558,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">seq2seq_model</span><span class="p">(</span><span class="n">input_data</span><span class="p">,</span> <span class="n">target_data</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span>
@@ -12647,7 +12648,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Number of Epochs</span>
@@ -12659,8 +12660,8 @@ Default GPU Device: /gpu:0
 <span class="c1"># Number of Layers</span>
 <span class="n">num_layers</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="c1"># Embedding Size</span>
-<span class="n">encoding_embedding_size</span> <span class="o">=</span> <span class="mi">256</span>
-<span class="n">decoding_embedding_size</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">encoding_embedding_size</span> <span class="o">=</span> <span class="mi">220</span>
+<span class="n">decoding_embedding_size</span> <span class="o">=</span> <span class="mi">220</span>
 <span class="c1"># Learning Rate</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="c1"># Dropout Keep Probability</span>
@@ -12685,7 +12686,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12756,7 +12757,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12810,7 +12811,7 @@ Default GPU Device: /gpu:0
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -12906,56 +12907,56 @@ Default GPU Device: /gpu:0
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch   0 Batch   50/269 - Train Accuracy: 0.4536, Validation Accuracy: 0.4963, Loss: 2.0769
-Epoch   0 Batch  100/269 - Train Accuracy: 0.5272, Validation Accuracy: 0.5305, Loss: 0.9028
-Epoch   0 Batch  150/269 - Train Accuracy: 0.5888, Validation Accuracy: 0.5866, Loss: 0.7224
-Epoch   0 Batch  200/269 - Train Accuracy: 0.6314, Validation Accuracy: 0.6377, Loss: 0.6336
-Epoch   0 Batch  250/269 - Train Accuracy: 0.6383, Validation Accuracy: 0.6529, Loss: 0.5561
-Epoch   1 Batch   50/269 - Train Accuracy: 0.6624, Validation Accuracy: 0.6851, Loss: 0.4938
-Epoch   1 Batch  100/269 - Train Accuracy: 0.7255, Validation Accuracy: 0.7013, Loss: 0.4123
-Epoch   1 Batch  150/269 - Train Accuracy: 0.7294, Validation Accuracy: 0.7264, Loss: 0.3842
-Epoch   1 Batch  200/269 - Train Accuracy: 0.7370, Validation Accuracy: 0.7442, Loss: 0.3479
-Epoch   1 Batch  250/269 - Train Accuracy: 0.7780, Validation Accuracy: 0.7596, Loss: 0.2992
-Epoch   2 Batch   50/269 - Train Accuracy: 0.7689, Validation Accuracy: 0.7879, Loss: 0.2728
-Epoch   2 Batch  100/269 - Train Accuracy: 0.8398, Validation Accuracy: 0.8005, Loss: 0.2152
-Epoch   2 Batch  150/269 - Train Accuracy: 0.8198, Validation Accuracy: 0.8289, Loss: 0.2019
-Epoch   2 Batch  200/269 - Train Accuracy: 0.8277, Validation Accuracy: 0.8332, Loss: 0.1784
-Epoch   2 Batch  250/269 - Train Accuracy: 0.8568, Validation Accuracy: 0.8431, Loss: 0.1646
-Epoch   3 Batch   50/269 - Train Accuracy: 0.8549, Validation Accuracy: 0.8660, Loss: 0.1500
-Epoch   3 Batch  100/269 - Train Accuracy: 0.8992, Validation Accuracy: 0.8850, Loss: 0.1248
-Epoch   3 Batch  150/269 - Train Accuracy: 0.8987, Validation Accuracy: 0.8946, Loss: 0.1145
-Epoch   3 Batch  200/269 - Train Accuracy: 0.9103, Validation Accuracy: 0.8983, Loss: 0.1071
-Epoch   3 Batch  250/269 - Train Accuracy: 0.9257, Validation Accuracy: 0.9115, Loss: 0.0971
-Epoch   4 Batch   50/269 - Train Accuracy: 0.9083, Validation Accuracy: 0.9146, Loss: 0.0987
-Epoch   4 Batch  100/269 - Train Accuracy: 0.9241, Validation Accuracy: 0.9230, Loss: 0.0843
-Epoch   4 Batch  150/269 - Train Accuracy: 0.9191, Validation Accuracy: 0.9304, Loss: 0.0756
-Epoch   4 Batch  200/269 - Train Accuracy: 0.9289, Validation Accuracy: 0.9244, Loss: 0.0704
-Epoch   4 Batch  250/269 - Train Accuracy: 0.9309, Validation Accuracy: 0.9259, Loss: 0.0685
-Epoch   5 Batch   50/269 - Train Accuracy: 0.9122, Validation Accuracy: 0.9292, Loss: 0.0748
-Epoch   5 Batch  100/269 - Train Accuracy: 0.9328, Validation Accuracy: 0.9395, Loss: 0.0611
-Epoch   5 Batch  150/269 - Train Accuracy: 0.9381, Validation Accuracy: 0.9364, Loss: 0.0646
-Epoch   5 Batch  200/269 - Train Accuracy: 0.9371, Validation Accuracy: 0.9394, Loss: 0.0596
-Epoch   5 Batch  250/269 - Train Accuracy: 0.9383, Validation Accuracy: 0.9361, Loss: 0.0601
-Epoch   6 Batch   50/269 - Train Accuracy: 0.9264, Validation Accuracy: 0.9426, Loss: 0.0713
-Epoch   6 Batch  100/269 - Train Accuracy: 0.9248, Validation Accuracy: 0.9468, Loss: 0.0642
-Epoch   6 Batch  150/269 - Train Accuracy: 0.9328, Validation Accuracy: 0.9401, Loss: 0.0604
-Epoch   6 Batch  200/269 - Train Accuracy: 0.9452, Validation Accuracy: 0.9411, Loss: 0.0547
-Epoch   6 Batch  250/269 - Train Accuracy: 0.9437, Validation Accuracy: 0.9410, Loss: 0.0552
-Epoch   7 Batch   50/269 - Train Accuracy: 0.9284, Validation Accuracy: 0.9466, Loss: 0.0650
-Epoch   7 Batch  100/269 - Train Accuracy: 0.9348, Validation Accuracy: 0.9469, Loss: 0.0581
-Epoch   7 Batch  150/269 - Train Accuracy: 0.9428, Validation Accuracy: 0.9500, Loss: 0.0584
-Epoch   7 Batch  200/269 - Train Accuracy: 0.9492, Validation Accuracy: 0.9447, Loss: 0.0540
-Epoch   7 Batch  250/269 - Train Accuracy: 0.9407, Validation Accuracy: 0.9466, Loss: 0.0541
-Epoch   8 Batch   50/269 - Train Accuracy: 0.9335, Validation Accuracy: 0.9497, Loss: 0.0595
-Epoch   8 Batch  100/269 - Train Accuracy: 0.9435, Validation Accuracy: 0.9368, Loss: 0.0550
-Epoch   8 Batch  150/269 - Train Accuracy: 0.9393, Validation Accuracy: 0.9457, Loss: 0.0549
-Epoch   8 Batch  200/269 - Train Accuracy: 0.9512, Validation Accuracy: 0.9479, Loss: 0.0471
-Epoch   8 Batch  250/269 - Train Accuracy: 0.9476, Validation Accuracy: 0.9568, Loss: 0.0519
-Epoch   9 Batch   50/269 - Train Accuracy: 0.9304, Validation Accuracy: 0.9466, Loss: 0.0620
-Epoch   9 Batch  100/269 - Train Accuracy: 0.9431, Validation Accuracy: 0.9466, Loss: 0.0546
-Epoch   9 Batch  150/269 - Train Accuracy: 0.9524, Validation Accuracy: 0.9513, Loss: 0.0558
-Epoch   9 Batch  200/269 - Train Accuracy: 0.9501, Validation Accuracy: 0.9406, Loss: 0.0480
-Epoch   9 Batch  250/269 - Train Accuracy: 0.9558, Validation Accuracy: 0.9513, Loss: 0.0434
+<pre>Epoch   0 Batch   50/269 - Train Accuracy: 0.4948, Validation Accuracy: 0.5367, Loss: 2.1135
+Epoch   0 Batch  100/269 - Train Accuracy: 0.5714, Validation Accuracy: 0.5702, Loss: 0.9548
+Epoch   0 Batch  150/269 - Train Accuracy: 0.6013, Validation Accuracy: 0.6006, Loss: 0.7322
+Epoch   0 Batch  200/269 - Train Accuracy: 0.6228, Validation Accuracy: 0.6355, Loss: 0.6367
+Epoch   0 Batch  250/269 - Train Accuracy: 0.6486, Validation Accuracy: 0.6422, Loss: 0.5417
+Epoch   1 Batch   50/269 - Train Accuracy: 0.6979, Validation Accuracy: 0.7047, Loss: 0.4346
+Epoch   1 Batch  100/269 - Train Accuracy: 0.7685, Validation Accuracy: 0.7554, Loss: 0.3486
+Epoch   1 Batch  150/269 - Train Accuracy: 0.7857, Validation Accuracy: 0.7770, Loss: 0.2992
+Epoch   1 Batch  200/269 - Train Accuracy: 0.8130, Validation Accuracy: 0.8169, Loss: 0.2607
+Epoch   1 Batch  250/269 - Train Accuracy: 0.8403, Validation Accuracy: 0.8308, Loss: 0.2155
+Epoch   2 Batch   50/269 - Train Accuracy: 0.8579, Validation Accuracy: 0.8766, Loss: 0.1785
+Epoch   2 Batch  100/269 - Train Accuracy: 0.9052, Validation Accuracy: 0.8912, Loss: 0.1449
+Epoch   2 Batch  150/269 - Train Accuracy: 0.8944, Validation Accuracy: 0.8984, Loss: 0.1248
+Epoch   2 Batch  200/269 - Train Accuracy: 0.9076, Validation Accuracy: 0.9171, Loss: 0.1079
+Epoch   2 Batch  250/269 - Train Accuracy: 0.9128, Validation Accuracy: 0.9131, Loss: 0.0995
+Epoch   3 Batch   50/269 - Train Accuracy: 0.9066, Validation Accuracy: 0.9256, Loss: 0.0990
+Epoch   3 Batch  100/269 - Train Accuracy: 0.9229, Validation Accuracy: 0.9278, Loss: 0.0851
+Epoch   3 Batch  150/269 - Train Accuracy: 0.9200, Validation Accuracy: 0.9285, Loss: 0.0858
+Epoch   3 Batch  200/269 - Train Accuracy: 0.9303, Validation Accuracy: 0.9396, Loss: 0.0726
+Epoch   3 Batch  250/269 - Train Accuracy: 0.9380, Validation Accuracy: 0.9382, Loss: 0.0699
+Epoch   4 Batch   50/269 - Train Accuracy: 0.9276, Validation Accuracy: 0.9300, Loss: 0.0698
+Epoch   4 Batch  100/269 - Train Accuracy: 0.9363, Validation Accuracy: 0.9447, Loss: 0.0649
+Epoch   4 Batch  150/269 - Train Accuracy: 0.9270, Validation Accuracy: 0.9382, Loss: 0.0692
+Epoch   4 Batch  200/269 - Train Accuracy: 0.9442, Validation Accuracy: 0.9445, Loss: 0.0570
+Epoch   4 Batch  250/269 - Train Accuracy: 0.9441, Validation Accuracy: 0.9501, Loss: 0.0561
+Epoch   5 Batch   50/269 - Train Accuracy: 0.9347, Validation Accuracy: 0.9465, Loss: 0.0626
+Epoch   5 Batch  100/269 - Train Accuracy: 0.9361, Validation Accuracy: 0.9426, Loss: 0.0547
+Epoch   5 Batch  150/269 - Train Accuracy: 0.9509, Validation Accuracy: 0.9506, Loss: 0.0597
+Epoch   5 Batch  200/269 - Train Accuracy: 0.9480, Validation Accuracy: 0.9436, Loss: 0.0491
+Epoch   5 Batch  250/269 - Train Accuracy: 0.9381, Validation Accuracy: 0.9409, Loss: 0.0510
+Epoch   6 Batch   50/269 - Train Accuracy: 0.9321, Validation Accuracy: 0.9571, Loss: 0.0559
+Epoch   6 Batch  100/269 - Train Accuracy: 0.9445, Validation Accuracy: 0.9494, Loss: 0.0503
+Epoch   6 Batch  150/269 - Train Accuracy: 0.9514, Validation Accuracy: 0.9530, Loss: 0.0539
+Epoch   6 Batch  200/269 - Train Accuracy: 0.9501, Validation Accuracy: 0.9513, Loss: 0.0474
+Epoch   6 Batch  250/269 - Train Accuracy: 0.9466, Validation Accuracy: 0.9512, Loss: 0.0505
+Epoch   7 Batch   50/269 - Train Accuracy: 0.9415, Validation Accuracy: 0.9578, Loss: 0.0573
+Epoch   7 Batch  100/269 - Train Accuracy: 0.9416, Validation Accuracy: 0.9602, Loss: 0.0505
+Epoch   7 Batch  150/269 - Train Accuracy: 0.9501, Validation Accuracy: 0.9572, Loss: 0.0530
+Epoch   7 Batch  200/269 - Train Accuracy: 0.9619, Validation Accuracy: 0.9497, Loss: 0.0423
+Epoch   7 Batch  250/269 - Train Accuracy: 0.9537, Validation Accuracy: 0.9532, Loss: 0.0463
+Epoch   8 Batch   50/269 - Train Accuracy: 0.9393, Validation Accuracy: 0.9572, Loss: 0.0588
+Epoch   8 Batch  100/269 - Train Accuracy: 0.9480, Validation Accuracy: 0.9587, Loss: 0.0511
+Epoch   8 Batch  150/269 - Train Accuracy: 0.9528, Validation Accuracy: 0.9627, Loss: 0.0486
+Epoch   8 Batch  200/269 - Train Accuracy: 0.9646, Validation Accuracy: 0.9576, Loss: 0.0444
+Epoch   8 Batch  250/269 - Train Accuracy: 0.9529, Validation Accuracy: 0.9571, Loss: 0.0521
+Epoch   9 Batch   50/269 - Train Accuracy: 0.9411, Validation Accuracy: 0.9609, Loss: 0.0493
+Epoch   9 Batch  100/269 - Train Accuracy: 0.9546, Validation Accuracy: 0.9652, Loss: 0.0424
+Epoch   9 Batch  150/269 - Train Accuracy: 0.9530, Validation Accuracy: 0.9521, Loss: 0.0439
+Epoch   9 Batch  200/269 - Train Accuracy: 0.9587, Validation Accuracy: 0.9603, Loss: 0.0371
+Epoch   9 Batch  250/269 - Train Accuracy: 0.9517, Validation Accuracy: 0.9565, Loss: 0.0484
 Model Trained and Saved
 </pre>
 </div>
@@ -12977,7 +12978,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13003,7 +13004,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -13042,7 +13043,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sentence_to_seq</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">vocab_to_int</span><span class="p">):</span>
@@ -13095,7 +13096,7 @@ Model Trained and Saved
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">translate_sentence</span> <span class="o">=</span> <span class="s1">&#39;he saw a old yellow truck .&#39;</span>
