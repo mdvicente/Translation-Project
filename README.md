@@ -1,2 +1,2 @@
 # Translation-Project
-Translation using RNN with Tensorflow
+Translation from english to french with RNN using TensorFlow
